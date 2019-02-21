@@ -24,7 +24,7 @@ class App extends Component {
           <button className="save-color">Save Color</button>
         </section>
         <section className="saved-list">
-          <h2 classname="saved-list-header">Your Colors: </h2>
+          <h2 className="saved-list-header">Your Colors: </h2>
           <section className="saved-color">
             <section className="swatch" />
             <p className="color-values">H: , S: , L: </p>
