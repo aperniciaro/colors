@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 class App extends Component {
   state = {
-    hue: 120,
+    hue: 50,
     saturation: 50,
     lightness: 50
   }
