@@ -7,6 +7,19 @@ html {
 }
 
 body {
-  margin: 0;
+  margin: 0 0 0 2rem;
   min-height: 100%;
+}
+
+.swatch {
+  height: 5rem;
+  width: 5rem;
+  background-color: red;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  max-width: 20rem;
+  justify-content: center;
 }
