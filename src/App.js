@@ -1,7 +1,4 @@
 import React, { Component } from 'react'
-// import Header from './components/Header'
-// import Controls from './components/Controls'
-// import Saved from './components/Saved'
 
 class App extends Component {
   state = {
@@ -21,6 +18,25 @@ class App extends Component {
   changeLightness = event => {
     this.setState({ lightness: event.target.value })
   }
+
+  // saveColor = event => {
+  //   const myHue = this.state.hue
+  //   const mySaturation = this.state.saturation
+  //   const myLightness = this.state.lightness
+  //   return (
+  //     <section className="saved-color">
+  //       <section
+  //         className="swatch"
+  //         style={{
+  //           backgroundColor: `hsl(${myHue},${mySaturation}%,${myLightness}%)`
+  //         }}
+  //       />
+  //       <p className="color-values">
+  //         H: {myhue}, S: {mySaturation}, L: {myLightness}
+  //       </p>
+  //     </section>
+  //   )
+  // }
 
   render() {
     return (
@@ -49,7 +65,9 @@ class App extends Component {
           <input type="range" onChange={this.changeSaturation} />
           <h3 className="slider-label">Lightness</h3>
           <input type="range" onChange={this.changeLightness} />
-          <button className="save-color">Save Color</button>
+          <button className="save-color" onclick={this.saveColor}>
+            Save Color
+          </button>
         </section>
         <section className="saved-list">
           <section className="saved-color">
