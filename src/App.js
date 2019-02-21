@@ -60,7 +60,7 @@ class App extends Component {
         </header>
         <section className="controls">
           <h3 className="slider-label">Hue</h3>
-          <input type="range" onChange={this.changeHue} />
+          <input type="range" onChange={this.changeHue} max="360" />
           <h3 className="slider-label">Saturation</h3>
           <input type="range" onChange={this.changeSaturation} />
           <h3 className="slider-label">Lightness</h3>
