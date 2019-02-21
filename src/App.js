@@ -6,11 +6,9 @@ class App extends Component {
     return (
       <>
         <h1 className="page-header">Color Selector</h1>
-        <section className="color-display">
-          <section className="color-sample">
-            <section className="swatch" />
-            <p className="color-values">H: , S: , L: </p>
-          </section>
+        <section className="active-color">
+          <section className="swatch" />
+          <p className="color-values">H: , S: , L: </p>
         </section>
         <section className="controls">
           <h3 className="slider-label">Hue</h3>
@@ -23,7 +21,7 @@ class App extends Component {
         </section>
         <section className="saved-list">
           <h2 classname="saved-list-header">Your Colors: </h2>
-          <section className="color-sample">
+          <section className="saved-color">
             <section className="swatch" />
             <p className="color-values">H: , S: , L: </p>
           </section>
