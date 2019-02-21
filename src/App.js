@@ -10,6 +10,18 @@ class App extends Component {
     lightness: 50
   }
 
+  changeHue = event => {
+    this.setState({ hue: event.target.value })
+  }
+
+  changeSaturation = event => {
+    this.setState({ saturation: event.target.value })
+  }
+
+  changeLightness = event => {
+    this.setState({ lightness: event.target.value })
+  }
+
   render() {
     return (
       <>
@@ -32,11 +44,11 @@ class App extends Component {
         </header>
         <section className="controls">
           <h3 className="slider-label">Hue</h3>
-          <input type="range" />
+          <input type="range" onChange={this.changeHue} />
           <h3 className="slider-label">Saturation</h3>
-          <input type="range" />
+          <input type="range" onChange={this.changeSaturation} />
           <h3 className="slider-label">Lightness</h3>
-          <input type="range" />
+          <input type="range" onChange={this.changeLightness} />
           <button className="save-color">Save Color</button>
         </section>
         <section className="saved-list">
