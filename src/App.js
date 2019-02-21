@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 class App extends Component {
   state = {
-    hue: 50,
+    hue: 120,
     saturation: 50,
     lightness: 50
   }
@@ -60,7 +60,7 @@ class App extends Component {
         </header>
         <section className="controls">
           <h3 className="slider-label">Hue</h3>
-          <input type="range" onChange={this.changeHue} max="360" />
+          <input type="range" onChange={this.changeHue} max="240" />
           <h3 className="slider-label">Saturation</h3>
           <input type="range" onChange={this.changeSaturation} />
           <h3 className="slider-label">Lightness</h3>
