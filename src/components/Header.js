@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Controls from '../components/Controls'
 
 class Header extends Component {
   state = {
