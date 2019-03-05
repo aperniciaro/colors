@@ -7,6 +7,15 @@ export default function Controls(props) {
     props.setSaturation(Math.floor(Math.random() * 100))
     props.setLightness(Math.floor(Math.random() * 100))
   }
+  const addSavedColor = () => {
+    props.setSavedColors(
+      props.savedColors.concat({
+        h: props.hue,
+        s: props.saturation,
+        l: props.lightness
+      })
+    )
+  }
   return (
     <section className="controls">
       <Slider
@@ -28,19 +37,7 @@ export default function Controls(props) {
         setAttribute={props.setLightness}
       />
       <button onClick={event => randomColor()}>Random Color</button>
-      <button
-        onClick={event =>
-          props.setSavedColors(
-            props.savedColors.concat({
-              h: props.hue,
-              s: props.saturation,
-              l: props.lightness
-            })
-          )
-        }
-      >
-        Save Color
-      </button>
+      <button onClick={event => addSavedColor()}>Save Color</button>
     </section>
   )
 }
