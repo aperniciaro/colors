@@ -4,6 +4,7 @@ export default function ColorPicker() {
   const [hue, setHue] = useState(50)
   const [saturation, setSaturation] = useState(50)
   const [lightness, setLightness] = useState(50)
+  const [savedColors, setSavedColors] = useState([])
 
   // saveColor = event => {
   //   const color = {
@@ -49,33 +50,37 @@ export default function ColorPicker() {
           type="range"
           onChange={event => setLightness(event.target.value)}
         />
-        {/* <button className="save-color" onClick={this.saveColor}>
-            Save Color
-          </button> */}
+        <button
+          className="save-color"
+          onClick={event =>
+            setSavedColors(
+              savedColors.concat(`hsl(${hue},${saturation}%,${lightness}%)`)
+            )
+          }
+        >
+          Save Color
+        </button>
       </section>
-      {/* <section className="saved-list">
-          <h2 className="saved-list-header">Your Colors: </h2>
-          <ul>
-            {this.state.savedColors.map(color => {
-              return (
-                <li class="saved-color">
-                  <section
-                    className="swatch"
-                    style={{
-                      backgroundColor: `hsl(${color.myHue},${
-                        color.mySaturation
-                      }%,${color.myLightness}%)`
-                    }}
-                  />
-                  <p className="color-values">
-                    H: {color.myHue}, S: {color.mySaturation}%, L:{' '}
-                    {color.myLightness}%
-                  </p>
-                </li>
-              )
-            })}
-          </ul>
-        </section> */}
+      <section className="saved-list">
+        <h2 className="saved-list-header">Your Colors: </h2>
+        <ul>
+          {savedColors.map((color, index) => {
+            return (
+              <li class="saved-color">
+                <section
+                  className="swatch"
+                  style={{
+                    backgroundColor: savedColors[index]
+                  }}
+                />
+                {/* <p className="color-values">
+                  H: {hue}, S: {saturation}%, L: {lightness}%
+                </p> */}
+              </li>
+            )
+          })}
+        </ul>
+      </section>
     </>
   )
 }
