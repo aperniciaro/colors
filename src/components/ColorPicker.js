@@ -43,7 +43,7 @@ export default function ColorPicker() {
           className="save-color"
           onClick={event =>
             setSavedColors(
-              savedColors.concat(`hsl(${hue},${saturation}%,${lightness}%)`)
+              savedColors.concat({ h: hue, s: saturation, l: lightness })
             )
           }
         >
@@ -59,12 +59,15 @@ export default function ColorPicker() {
                 <section
                   className="swatch"
                   style={{
-                    backgroundColor: savedColors[index]
+                    backgroundColor: `hsl(${savedColors[index].h},${
+                      savedColors[index].s
+                    }%,${savedColors[index].l}%)`
                   }}
                 />
-                {/* <p className="color-values">
-                  H: {hue}, S: {saturation}%, L: {lightness}%
-                </p> */}
+                <p className="color-values">
+                  H: {savedColors[index].h}, S: {savedColors[index].s}%, L:{' '}
+                  {savedColors[index].l}%
+                </p>
               </li>
             )
           })}
