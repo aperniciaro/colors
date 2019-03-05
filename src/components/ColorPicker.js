@@ -6,17 +6,6 @@ export default function ColorPicker() {
   const [lightness, setLightness] = useState(50)
   const [savedColors, setSavedColors] = useState([])
 
-  // saveColor = event => {
-  //   const color = {
-  //     myHue: this.state.hue,
-  //     mySaturation: this.state.saturation,
-  //     myLightness: this.state.lightness
-  //   }
-  //   this.setState({
-  //     savedColors: this.state.savedColors.concat(color)
-  //   })
-  // }
-
   return (
     <>
       <header>
