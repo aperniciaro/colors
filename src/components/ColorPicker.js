@@ -6,6 +6,12 @@ export default function ColorPicker() {
   const [lightness, setLightness] = useState(Math.floor(Math.random() * 100))
   const [savedColors, setSavedColors] = useState([])
 
+  const randomColor = () => {
+    setHue(Math.floor(Math.random() * 240))
+    setSaturation(Math.floor(Math.random() * 100))
+    setLightness(Math.floor(Math.random() * 100))
+  }
+
   return (
     <>
       <header>
@@ -42,8 +48,8 @@ export default function ColorPicker() {
           onChange={event => setLightness(event.target.value)}
           value={lightness}
         />
+        <button onClick={event => randomColor()}>Random Color</button>
         <button
-          className="save-color"
           onClick={event =>
             setSavedColors(
               savedColors.concat({ h: hue, s: saturation, l: lightness })
