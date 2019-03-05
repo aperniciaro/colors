@@ -1,4 +1,5 @@
 import React from 'react'
+import Slider from '../components/Slider'
 
 export default function Controls(props) {
   const randomColor = () => {
@@ -8,24 +9,23 @@ export default function Controls(props) {
   }
   return (
     <section className="controls">
-      <h3 className="slider-label">Hue</h3>
-      <input
-        type="range"
-        onChange={event => props.setHue(event.target.value)}
-        value={props.hue}
+      <Slider
+        name="hue"
         max="240"
+        value={props.hue}
+        setAttribute={props.setHue}
       />
-      <h3 className="slider-label">Saturation</h3>
-      <input
-        type="range"
-        onChange={event => props.setSaturation(event.target.value)}
+      <Slider
+        name="saturation"
+        max="100"
         value={props.saturation}
+        setAttribute={props.setSaturation}
       />
-      <h3 className="slider-label">Lightness</h3>
-      <input
-        type="range"
-        onChange={event => props.setLightness(event.target.value)}
+      <Slider
+        name="lightness"
+        max="100"
         value={props.lightness}
+        setAttribute={props.setLightness}
       />
       <button onClick={event => randomColor()}>Random Color</button>
       <button
